@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+const divide = (numi ,deno )=>{
+ return new Promise((resolve , reject)=>{
+if(deno === 0){
+    reject("Error:Division by 0 is not allowed")
+}
+else{
+    resolve(numi / deno);
+}
+ });
+  }
+
+  //test Cases
+
+  (async()=>{
+    try{
+    const result1 = await divide(10,2);
+    console.log("Result 1 :",result1);
+
+    const result2 = await divide(8, 0);
+        console.log("Result 2:", result2);
+
+    }catch(error){
+        console.log(error);
+    }
+
+
+    try{
+        const result3 = await divide(20, 4);
+        console.log("Result 3:", result3);
+
+        const result4 = await divide(15, 3);
+        console.log("Result 4:", result4);
+
+        const result5 = await divide(100, 0);
+        console.log("Result 5:", result5);
+    }catch(error){
+        console.log(error);
+    }
+  })();
+    </script>
+</head>
+<body>
+    <h1>Output in console</h1>
+</body>
+</html>
